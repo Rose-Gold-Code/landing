@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import Link from 'next/link';
+
+const basePath = process.env.PAGES_BASE_PATH || '';
 
 const projects = [
   { name: 'F52', category: 'Film discovery & ranking', description: 'Give your movie opinions a little more character. A playing-card-inspired film app that uses suits, tiers, and head-to-head comparisons to help you rank what you watch.', label: 'In development', className: 'film', image: '/images/f52.png', number: '01' },
@@ -14,7 +15,7 @@ export default function Home() {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header wrap">
-        <Link className="wordmark" href="/" aria-label="Rose Gold Code home"><span className="brand-mark" aria-hidden="true">{'{'}<span>·</span>{'}'}</span><span>Rose Gold Code</span></Link>
+        <a className="wordmark" href="#main" aria-label="Rose Gold Code home"><span className="brand-mark" aria-hidden="true">{'{'}<span>·</span>{'}'}</span><span>Rose Gold Code</span></a>
         <nav aria-label="Main navigation"><a href="#apps">Our apps</a><a href="#about">About</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
       </header>
       <main id="main">
@@ -29,7 +30,7 @@ export default function Home() {
           <div className="project-grid">
             {projects.map((project) => <article className={`project ${project.className}`} key={project.name}>
               <div className="project-top"><span className="project-number">/{project.number}</span><span className="status"><span aria-hidden="true" />{project.label}</span></div>
-              <div className="project-title">{project.image && <Image src={project.image} width={64} height={64} alt="" unoptimized />}<h3>{project.name}</h3></div>
+              <div className="project-title">{project.image && <Image src={`${basePath}${project.image}`} width={64} height={64} alt="" unoptimized />}<h3>{project.name}</h3></div>
               <p className="project-category">{project.category}</p><p className="project-description">{project.description}</p>
             </article>)}
             <aside className="portfolio-note"><span className="note-mark" aria-hidden="true">{'</>'}</span><p>Made with care.<br />Built to be used.</p><span>From first idea to everyday companion.</span></aside>
@@ -38,7 +39,7 @@ export default function Home() {
         <section id="about" className="about wrap" aria-labelledby="about-title"><p className="eyebrow">The studio</p><div><h2 id="about-title">Independent by design.</h2><p>Rose Gold Code LLC is an independent software company based in Arizona. Founded by William Cox, we develop and publish apps that bring a fresh perspective to everyday activities.</p><p>We keep the studio small and the work focused, giving each product its own purpose and personality. Our apps are currently in development or private testing as we prepare them for release.</p></div></section>
         <section id="contact" className="contact wrap" aria-labelledby="contact-title"><div><p className="eyebrow">Get in touch</p><h2 id="contact-title">Let’s talk.</h2><p>Questions about the studio or one of our apps?<br />We’d like to hear from you.</p></div><a className="email-link" href="mailto:will@rosegoldcode.com">will@rosegoldcode.com <span aria-hidden="true">↗</span></a></section>
       </main>
-      <footer className="site-footer wrap"><Link className="footer-brand" href="/">Rose Gold Code LLC</Link><p>© {new Date().getFullYear()} Rose Gold Code LLC</p><a href="mailto:will@rosegoldcode.com">Contact</a></footer>
+      <footer className="site-footer wrap"><a className="footer-brand" href="#main">Rose Gold Code LLC</a><p>© {new Date().getFullYear()} Rose Gold Code LLC</p><a href="mailto:will@rosegoldcode.com">Contact</a></footer>
     </>
   );
 }

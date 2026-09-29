@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Rose Gold Code | Independent Software Studio',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: `${process.env.PAGES_BASE_PATH || ''}/favicon.svg` },
   description: 'Rose Gold Code LLC is an independent Arizona software studio developing apps for films, budgeting, sports, notes, and social connection.',
 };
 
