@@ -25,7 +25,7 @@ export default function F52Privacy() {
           <ul>
             <li>F52 has no accounts, sign-in, ads, analytics, or tracking.</li>
             <li>Your Seen and Watchlist lists, rankings, and settings are stored only on your device. We never receive them.</li>
-            <li>To show films and shows, F52 loads data from The Movie Database (TMDB). Trailers come from YouTube.</li>
+            <li>To show films and shows, F52 loads data from The Movie Database (TMDB). Trailers come from YouTube. App updates come from Expo.</li>
             <li>We only hear from you if you email us.</li>
           </ul>
         </section>
@@ -45,6 +45,7 @@ export default function F52Privacy() {
           <h2 id="services">Services F52 connects to</h2>
           <p><strong>The Movie Database (TMDB).</strong> F52 requests film and TV information, artwork, and streaming availability from TMDB. Your search terms and the filters you choose are sent to TMDB to get results. Like any website or online service, TMDB receives your device’s IP address and basic technical information with each request. TMDB’s use of that information is covered by the <a href="https://www.themoviedb.org/privacy-policy">TMDB Privacy Policy</a>. F52 uses the TMDB API but is not endorsed or certified by TMDB.</p>
           <p><strong>YouTube.</strong> When a title has a trailer, F52 shows its thumbnail from YouTube and plays the trailer in an embedded YouTube player. YouTube, operated by Google, receives your IP address and may use cookies when the player loads. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+          <p><strong>Expo.</strong> When F52 starts, it checks Expo’s update service for bug fixes and improvements to download. Expo receives your device’s IP address and technical details needed to deliver the right update, such as the app version, platform, and an installation identifier. See the <a href="https://expo.dev/privacy">Expo Privacy Policy</a>.</p>
           <p>F52 does not send these services your name, email, or the contents of your lists.</p>
         </section>
 
